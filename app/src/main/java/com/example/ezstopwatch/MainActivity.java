@@ -45,8 +45,25 @@ public class MainActivity extends AppCompatActivity {
                 seconds = 0;
             }
         });
+        //we check if the bundle saveInstantState is not null
+        //then we return the previous values of the seconds and running
+        //to the activity
+        if (savedInstanceState != null) {
+            seconds = savedInstanceState.getInt("seconds");
+            running = savedInstanceState.getBoolean("running");
+        }
         runTimer();
 
+    }
+
+    //We use this method because when we rotated the device
+    //we noticed that the activity resets itself and then restarts
+    //because of this our progress is lost
+    //so we save the values using this function
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("seconds", seconds);
+        savedInstanceState.putBoolean("running", running);
     }
 
 
