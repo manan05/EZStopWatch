@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void wait1sec() {
-        long startTime = System.currentTimeMillis();
-        while (System.currentTimeMillis() < startTime + 1000) ;
-    }
+//    public void wait1sec() {
+//        long startTime = System.currentTimeMillis();
+//        while (System.currentTimeMillis() < startTime + 1000) ;
+//    }
 
     public void runTimer() {
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 tvTimer.setText(time);
 
                 if (running) {
-                    wait1sec();
+//                    wait1sec();
                     seconds++;
                 }
                 handler.postDelayed(this, 1000);
