@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 running = true;
+                Toast.makeText(MainActivity.this, "_START_", Toast.LENGTH_SHORT).show();
             }
         });
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 running = false;
+                Toast.makeText(MainActivity.this, "_PAUSE_", Toast.LENGTH_SHORT).show();
             }
         });
         btnReset.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 running = false;
                 seconds = 0;
+                Toast.makeText(MainActivity.this, "_RESET_", Toast.LENGTH_SHORT).show();
             }
         });
         //we check if the bundle saveInstantState is not null
